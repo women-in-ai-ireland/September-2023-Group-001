@@ -91,7 +91,7 @@ The talks resulting from the similarity matrix are compared with the related_tal
 **Future Work**<br>
 
 - Quantitative accuracy of the recommender system based on the similarity matrices
-- Topic modelling and its accuracy based on topic_(n)_name
+- Topic modelling and its accuracy based on topic_(n)_name using LDA or BERT
 - Correlation between the duration of the talks, gender of the speaker, topic and popularity
 
 
