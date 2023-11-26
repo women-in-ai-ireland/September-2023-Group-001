@@ -86,7 +86,14 @@ We use the Python scikit-learn library to perform feature extraction on the text
 **Similarity Measure** 
 We use the Python scipy library to compute the cosine similarity between the talks based on their feature vectors. Cosine similarity is a measure of how similar two vectors are in terms of their orientation, regardless of their magnitude. Cosine similarity ranges from -1 to 1, where 1 means the vectors are identical, 0 means they are orthogonal, and -1 means they are opposite. We have also used Pearson similarity that evaluates how two measures are corelated to each other. It measures the strength two variables that are linearly related. It varies from -1 to 1, where -1 means the variables have highest negative correlation, 0 menas the variables have no correlation, and + 1 means that they have highest positive correlation.
 
-The talks resulting from the similarity matrix are compared with the realted_talk_ slug from the dataset.
+The talks resulting from the similarity matrix are compared with the related_talk_(n)_slug from the dataset.
+
+###Future Work
+
+- Quantitative accuracy of the recommender system based on the similarity matrices
+- Topic modelling and its accuracy based on topic_(n)_name
+- Correlation between the duration of the talks, gender of the speaker, topic and popularity
+
 
 
 
