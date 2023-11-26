@@ -81,10 +81,14 @@ We create two measures of sentiment for each talk:
    ![Alt text](img/wordclouds.png)
 
 **Feature Extraction**
-We use the Python scikit-learn library to perform feature extraction on the text data, such as TF-IDF, to convert the text data into numerical vectors that capture the semantic meaning and similarity of the talks.
+We use the Python scikit-learn library to perform feature extraction on the text data, such as TF-IDF, to convert the text data into numerical vectors that capture the semantic meaning and similarity of the talks for which we have combined the title and the transcript of the talk
 
 **Similarity Measure** 
-We use the Python scipy library to compute the cosine similarity between the talks based on their feature vectors. Cosine similarity is a measure of how similar two vectors are in terms of their orientation, regardless of their magnitude. Cosine similarity ranges from -1 to 1, where 1 means the vectors are identical, 0 means they are orthogonal, and -1 means they are opposite.
+We use the Python scipy library to compute the cosine similarity between the talks based on their feature vectors. Cosine similarity is a measure of how similar two vectors are in terms of their orientation, regardless of their magnitude. Cosine similarity ranges from -1 to 1, where 1 means the vectors are identical, 0 means they are orthogonal, and -1 means they are opposite. We have also used Pearson similarity that evaluates how two measures are corelated to each other. It measures the strength two variables that are linearly related. It varies from -1 to 1, where -1 means the variables have highest negative correlation, 0 menas the variables have no correlation, and + 1 means that they have highest positive correlation.
+
+The talks resulting from the similarity matrix are compared with the realted_talk_ slug from the dataset.
+
+
 
 
 
