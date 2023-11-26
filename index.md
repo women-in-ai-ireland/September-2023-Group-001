@@ -88,7 +88,7 @@ We use the Python scipy library to compute the cosine similarity between the tal
 
 The talks resulting from the similarity matrix are compared with the related_talk_(n)_slug from the dataset.
 
-###Future Work
+**Future Work**<br>
 
 - Quantitative accuracy of the recommender system based on the similarity matrices
 - Topic modelling and its accuracy based on topic_(n)_name
