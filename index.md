@@ -65,10 +65,19 @@ The final dataset consists of 6,099 TED Talks with 64 informative features:
    * Boolean type: **has_preview**, **comments_enabled**, **comments_logged_in_only**
 
 
+![Alt text](img/frequency_talks.png)
+
+![Alt text](img/talk_topic_duration.png)
+
+
 **Data Preprocessing**<br>
 A custom function is created using several libraries (`NLTK`, `neattext`, `re`) to perform:
 - basic text preprocessing, such as tokenization, stopword removal, stemming, lemmatization.
 - specific cleaning steps, such as removing any irrelevant or noisy data, such as audio cues and the speaker names, HTML tags, punctuation, numbers.
+
+
+Corpus Summary<br>
+![Alt text](img/corpus_summary.png)
 
 **Sentiment Analysis**<br> 
 We use `NLTK` and `VADER sentiment` libraries to perform sentiment analysis on the text data. Sentiment analysis is the process of identifying and extracting the emotional tone and attitude of the text, such as positive, negative, or neutral. We use the VADER sentiment analyzer because it is specifically designed for social media texts and can handle emoticons, slang, acronyms, and punctuation marks.
@@ -76,23 +85,39 @@ We use `NLTK` and `VADER sentiment` libraries to perform sentiment analysis on t
 We create two measures of sentiment for each talk:
 
 - **get_sentiment_score**: This function returns the compound score of the sentiment of the whole text, which ranges from -1 (extremely negative) to 1 (extremely positive). The compound score is computed by summing the valence scores of each word in the text, adjusted according to the rules, and then normalized to be between -1 and 1. However, this measure captures a lot of neutral words that are ranked either positive or negative by the VADER lexicon.
-- **get_text_polarity_score**: This function returns the average polarity score of the words in the text, which also ranges from -1 to 1. The polarity score of each word is obtained by using the VADER sentiment analyzer, which assigns a positive or negative value to each word based on a predefined lexicon. The average polarity score is computed by taking the mean of the polarity scores of all the words in the text. This measure controls for the frequency of neutral words in the text, and provides a more balanced sentiment score of the text.
+- **get_text_polarity_score**: This function returns the average polarity score of the words in the text, which also ranges from -1 to 1. The polarity score of each word is obtained by using the VADER sentiment analyzer, which assigns a positive or negative value to each word based on a predefined lexicon. The average polarity score is computed by taking the mean of the polarity scores of all the words in the text. This measure controls for the frequency of neutral words in the text, and provides a more balanced sentiment score of the text.<br>
 
-   ![Alt text](img/wordclouds.png)
+![Alt text](img/sentimentscorebyyear.png)
+
+
+Word frequencies<br>
+![Alt text](img/posword.png)
+![Alt text](img/negword.png)<br>
+
+
+
+Word clouds<br>
+![Alt text](img/wordcloudpos.png)
+![Alt text](img/wordcloudneg.png)
 
 **Feature Extraction**
 We use the Python scikit-learn library to perform feature extraction on the text data, such as TF-IDF, to convert the text data into numerical vectors that capture the semantic meaning and similarity of the talks for which we have combined the title and the transcript of the talk
+
+![Alt text](img/generalwordcloud.png)
 
 **Similarity Measure** 
 We use the Python scipy library to compute the cosine similarity between the talks based on their feature vectors. Cosine similarity is a measure of how similar two vectors are in terms of their orientation, regardless of their magnitude. Cosine similarity ranges from -1 to 1, where 1 means the vectors are identical, 0 means they are orthogonal, and -1 means they are opposite. We have also used Pearson similarity that evaluates how two measures are corelated to each other. It measures the strength two variables that are linearly related. It varies from -1 to 1, where -1 means the variables have highest negative correlation, 0 menas the variables have no correlation, and + 1 means that they have highest positive correlation.
 
 The talks resulting from the similarity matrix are compared with the related_talk_(n)_slug from the dataset.
 
+![Alt text](img/sentimentresults.png)
+
 **Future Work**<br>
 
 - Quantitative accuracy of the recommender system based on the similarity matrices
 - Topic modelling and its accuracy based on topic_(n)_name using LDA or BERT
 - Correlation between the duration of the talks, gender of the speaker, topic and popularity
+- Developing a Python library for the web scraper
 
 
 
